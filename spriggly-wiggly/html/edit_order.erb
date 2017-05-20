@@ -17,6 +17,13 @@
     <h3>Edit an order!</h3>
     <h4><a href='/'>All Restaurants</a></h4>
 
+    <%# a form to update an existing order %>
+    <form action='/orders/<%= order.id %>' method='POST' class='centered'>
+      <label>description</label>
+      <input type='text' name='description' required value='<%= order.description %>' />
+      <input type='hidden' name='_method' value='PUT'>
+      <input type='submit' value='edit order' />
+    </form>
+
   </body>
 </html>
-

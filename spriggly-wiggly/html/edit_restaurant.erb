@@ -17,5 +17,15 @@
     <h3>Edit a restaurant!</h3>
     <h4><a href='/'>All Restaurants</a></h4>
 
+    <%# a form that edits an existing restaurant %>
+    <form action='/restaurants/<%= restaurant.id %>' method='post' class='centered'>
+      <label>name</label>
+      <input type='text' name='name' required value='<%= restaurant.name %>' />
+      <label>location</label>
+      <input type='text' name='location' value='<%= restaurant.location %>' required/>
+      <input type='hidden' name='_method' value='put'>
+      <input type='submit' value='edit restaurant' />
+    </form>
+
   </body>
 </html>
